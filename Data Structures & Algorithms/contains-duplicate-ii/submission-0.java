@@ -1,0 +1,16 @@
+class Solution {
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        for(int i = 0; i < nums.length-1; i++){
+            int ans = nums[0];
+            for(int j = i+1; j < nums.length;j++){
+                if(nums[i] == nums[j]){
+                    ans = Math.abs(i - j);
+                }
+                if(ans == k){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+}
